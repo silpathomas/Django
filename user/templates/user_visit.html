@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8" />
+<title>User Management</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+<body class="error-body no-top">
+</body>
+ {% if status %}
+<table class="table">
+  <thead>
+      
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User Name</th>
+      <th scope="col">page</th>
+      <th scope="col">count</th>
+    </tr>
+  </thead>
+  <tbody>
+     {% for i in queryobj %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.policy_id__user_id__name}}</td>
+      <td>{{i.page_id__name}}</td>
+      <td>{{i.dcount}}</td>
+    </tr>
+     {% endfor %} 
+  </tbody>
+</table>
+
+{% else %}
+  <h2>Data not found</h2>
+{% endif %}
